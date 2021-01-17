@@ -6,8 +6,9 @@ import (
 
 // Application holds the application configuration
 type Application struct {
-	Base string
+	Host string
 	Port int
+	Mode string
 }
 
 // app is the default application configuration
@@ -24,7 +25,8 @@ func LoadApp() {
 	defer mu.Unlock()
 
 	app = Application{
-		Base: viper.GetString("app.host"),
+		Host: viper.GetString("app.host"),
 		Port: viper.GetInt("app.port"),
+		Mode: viper.GetString("app.mode"),
 	}
 }

@@ -1,6 +1,9 @@
 package cmd
 
-import "github.com/spf13/cobra"
+import (
+	"github.com/s4kibs4mi/newschain-cache/api"
+	"github.com/spf13/cobra"
+)
 
 var (
 	serveCmd = &cobra.Command{
@@ -11,5 +14,5 @@ var (
 )
 
 func execStartServer(cmd *cobra.Command, args []string) {
-
+	api.StartServer()
 }

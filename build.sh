@@ -2,7 +2,7 @@
 
 export GO111MODULE=on
 export GOARCH="amd64"
-export CGO_ENABLED=0
+export CGO_ENABLED=1
 
 cmd=$1
 

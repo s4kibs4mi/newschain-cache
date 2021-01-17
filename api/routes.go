@@ -29,4 +29,7 @@ func GetRouter() http.Handler {
 
 func registerV1Routes() {
 	v1 := router.Group("/v1")
+
+	eventRoutes := v1.Group("/events")
+	eventRoutes.GET("/", listEvents)
 }

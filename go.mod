@@ -3,7 +3,11 @@ module github.com/s4kibs4mi/newschain-cache
 go 1.14
 
 require (
-	github.com/facebook/ent v0.5.4 // indirect
+	github.com/confluentinc/confluent-kafka-go v1.5.2
+	github.com/ethereum/go-ethereum v1.9.25
+	github.com/facebook/ent v0.5.4
+	github.com/google/uuid v1.1.4
+	github.com/jackc/pgx/v4 v4.10.1
 	github.com/labstack/echo/v4 v4.1.17
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/sirupsen/logrus v1.7.0

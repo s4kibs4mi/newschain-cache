@@ -1,0 +1,16 @@
+app:
+  host: '0.0.0.0'
+  port: 9090
+  mode: debug
+ethereum:
+  node: 'ws://eth.sakib.ninja:8545/ws'
+  contract_address: '0xC7B806A2cE809e7c905EF633668c4c0d9d920177'
+database:
+  host: eth.sakib.ninja
+  port: 5432
+  username: root
+  password: test
+  name: newschain
+  max_idle_connections: 2
+  max_active_connections: 10
+  max_connection_lifetime: 2

@@ -3,6 +3,7 @@ package api
 import (
 	"context"
 	"fmt"
+	"github.com/s4kibs4mi/newschain-cache/config"
 	"github.com/s4kibs4mi/newschain-cache/log"
 	"net/http"
 	"os"
@@ -11,7 +12,7 @@ import (
 )
 
 func StartServer() {
-	addr := fmt.Sprintf("%s:%d", config.App().Base, config.App().Port)
+	addr := fmt.Sprintf("%s:%d", config.App().Host, config.App().Port)
 
 	stop := make(chan os.Signal)
 	signal.Notify(stop, os.Interrupt)
