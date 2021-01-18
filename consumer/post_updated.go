@@ -8,6 +8,7 @@ import (
 	"github.com/s4kibs4mi/newschain-cache/contracts"
 	"github.com/s4kibs4mi/newschain-cache/data"
 	"github.com/s4kibs4mi/newschain-cache/log"
+	"os"
 )
 
 func BootConsumerPostUpdated(c *contracts.Contracts, startBlock *uint64) error {
@@ -25,7 +26,7 @@ func BootConsumerPostUpdated(c *contracts.Contracts, startBlock *uint64) error {
 			select {
 			case err := <-postUpdatedSubscription.Err():
 				log.Log().Errorln(err)
-				break
+				os.Exit(-1)
 			case event := <-postUpdatedChan:
 				log.Log().Infoln(event.Id)
 				log.Log().Infoln(event.Title)

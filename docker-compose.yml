@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  pg:
+    image: postgres:10
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: newschain
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: root
+    volumes:
+      - "$HOME/storage/pg/:/var/lib/postgresql/data/"
+
+  ganache:
+    image: trufflesuite/ganache-cli:latest
+    ports:
+      - "8545:8545"
+    volumes:
+      - $HOME/ganache_data:/ganache_data
+    entrypoint:
+      - node
+      - /app/ganache-core.docker.cli.js
+      - --deterministic
+      - --db=/ganache_data
+      - --mnemonic
+      - 'minimum symptom minute gloom tragic situate silver mechanic salad amused elite beef'
+      - --networkId
+      - '5777'
+      - --hostname
+      - '0.0.0.0'
+      - --debug

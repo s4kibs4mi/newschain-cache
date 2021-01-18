@@ -28,7 +28,7 @@ func BootConsumerPostCreated(c *contracts.Contracts, startBlock *uint64) error {
 			select {
 			case err := <-postCreatedSubscription.Err():
 				log.Log().Errorln(err)
-				break
+				os.Exit(-1)
 			case event := <-postCreatedChan:
 				log.Log().Infoln(event.Id)
 				log.Log().Infoln(event.Title)
